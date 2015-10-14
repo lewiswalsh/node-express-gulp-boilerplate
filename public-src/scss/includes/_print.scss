@@ -1,0 +1,27 @@
+/*---------------------------------------------------------
+	Print styles
+---------------------------------------------------------*/
+@media print {
+	* {
+		color:#000 !important;
+		box-shadow:none !important;
+		text-shadow:none !important;
+		background:transparent !important;
+	}
+	html { background-color:#fff; }
+	nav { display:none; } /* Hide navigation */
+	a[href]:after { content: " (" attr(href) ") "; } /* Show link destinations in brackets after the link text */
+	a[href] {
+		font-weight:bold;
+		text-decoration:underline;
+		color:#06c;
+		border:none;
+	}
+	a[href^="javascript:"]:after, a[href^="#"]:after { content:""; } /* Don't show link destinations for JavaScript or internal links */ 
+	abbr[title]:after { content: " (" attr(title) ")"; } /* Show abbr title value in brackets after the text */
+	figure { 
+		margin-bottom:1em; 
+		overflow:hidden;
+	}
+	figure img { border:1px solid #000; }
+}

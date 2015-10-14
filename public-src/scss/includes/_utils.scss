@@ -1,0 +1,30 @@
+
+	%cf, .cf {
+		clear: both;
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+
+	.r { text-align: right; }
+	.c { text-align: center; }
+	.fr { float: right; }
+	.fl { float: left; }
+
+	.textreplace {
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.anchor_cover {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: transparent;
+			width: 100%;
+			height: 100%;
+			z-index: 99;
+	}

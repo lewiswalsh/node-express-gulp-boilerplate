@@ -1,0 +1,15 @@
+{
+   "apps" : [
+      {
+         "name"         : "My App Title",
+         "script"       : "app.js",
+         "ignore_watch" : ["node_modules", "public", "_no", ".sass-cache"],
+         "watch"        : true,
+         "exec_mode"    : "cluster_mode",
+         "instances"    : "max",
+         "env"          : {
+            "NODE_ENV" : "production"
+         }
+      }
+   ]
+}

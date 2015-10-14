@@ -1,0 +1,51 @@
+
+	@mixin linear-gradient($fromColor, $toColor){
+		background-color: $toColor; // Fallback Color */
+		background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); // Saf4+, Chrome
+		background-image: -webkit-linear-gradient(top, $fromColor, $toColor); // Chrome 10+, Saf5.1+, iOS 5+
+		background-image:    -moz-linear-gradient(top, $fromColor, $toColor); // FF3.6
+		background-image:     -ms-linear-gradient(top, $fromColor, $toColor); // IE10
+		background-image:      -o-linear-gradient(top, $fromColor, $toColor); // Opera 11.10+
+		background-image:         linear-gradient(top, $fromColor, $toColor);
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+	}
+	
+	@mixin font-size($sizeValue: 1.6){
+		font-size: ($sizeValue * 10) + px;
+		font-size: $sizeValue + rem;
+	}
+	
+	@mixin rotate($deg){
+		transform: 			rotate($deg + deg);
+		-ms-transform: 		rotate($deg + deg); /* IE 9 */
+		-webkit-transform: 	rotate($deg + deg); /* Opera, Chrome, and Safari */
+	}
+	
+	@mixin rounded-corners($tl, $tr, $bl, $br){
+		-webkit-border-top-left-radius: 	$tl;
+		-webkit-border-top-right-radius: 	$tr;
+		-webkit-border-bottom-right-radius: $bl;
+		-webkit-border-bottom-left-radius: 	$br;
+		-moz-border-radius-topleft: 		$tl;
+		-moz-border-radius-topright: 		$tr;
+		-moz-border-radius-bottomright: 	$bl;
+		-moz-border-radius-bottomleft: 	$br;
+		border-top-left-radius: 		$tl;
+		border-top-right-radius: 		$tr;
+		border-bottom-right-radius: 	$bl;
+		border-bottom-left-radius: 		$br;
+	}
+	
+	
+	@mixin maintain_ratio($ratio: 1 1) {
+		@if length($ratio) < 2 or length($ratio) > 2 {
+			@warn "$ratio must be a list with two values.";
+		}
+
+		$width: 100%;
+		$height: percentage(nth($ratio, 2) / nth($ratio, 1));
+
+		width: $width;
+		height: 0;
+		padding-bottom: $height;
+	}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>{{page_title}} - {{app_title}}</title><!-- Site title only necessary on front page. 70 chars, relevant stuff first. -->
+  <meta name='description' content=''>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='icon' type='image/x-icon' href='http://example.com/favicon.ico' />
+  <link href='css/style.css' rel='stylesheet' media='all'>
+  <!-- HTML5Shiv with Print --><!--[if lt IE 9]><script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv-printshiv.min.js' media='all'></script><![endif]-->
+</head>
+<body>
+
+  <header role='banner' class='container'>
+    <h2>A title</h2>
+    <p>Base: {{app_base}}</p>
+  </header>
+
+  <nav role='navigation'><!-- <nav> does not have to appear in <header> and does not need to be unique -->
+  </nav>
+
+  <div class='container'><!-- to wrap the whole site a <div> is still the best option -->
+
+    <main role='main'><!-- only ONE instance of this allowed. Wraps the key site content -->
+
+      {{{body}}}
+
+
+
+    </main>
+
+    <aside role='complementary'><!-- role='complementary' used as the content supports the content of the main element -->
+      <h3>A lesser title</h3>
+      <p>Blah, blah, blah!</p>
+    </aside>
+
+  </div>
+
+  <footer role='contentinfo' class='container'><!-- role='contentinfo' is used as metadata relavent to page appears in this -->
+    <!-- A duplicate of the site navigation need NOT be in a <nav> element -->
+    <small>Copyright &copy; <time datetime='2014'>2014</time></small><!-- note <time> element -->
+  </footer>
+
+<script src='js/jquery-2.1.1.min.js'></script>
+<script async src='js/production.min.js'></script>
+<script>
+
+  (function(window,document,undefined){
+
+  })(this, document);
+
+  jQuery(document).ready(function($){
+
+  });
+</script>
+
+</body>
+</html>

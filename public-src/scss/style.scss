@@ -1,0 +1,50 @@
+
+	$main_font:		Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	
+	@import 'includes/reset';
+	@import 'includes/mixins';
+	@import 'includes/utils';
+	@import 'includes/print';
+	
+	html { 
+		font-size: 62.5%;
+	}
+	
+	body {
+		font-family: $main_font;
+		text-align: center;
+	}
+	
+	a:link 		{ color:#0271fb; }
+	a:visited 	{ color:#bd02fb; }
+	a:hover, a:focus { color:#000; }
+	a:active 	{ color:#fb0e02; }
+
+	p, table {
+		@include font-size(1.6);
+		line-height: 1.2;
+	}
+	
+	.container {
+		@extend %cf;
+		width: 1170px;
+		padding: 15px;
+		margin: 0 auto 0 auto;
+		text-align: left;
+		@media (max-width: 1200px){
+			width: 960px;		
+		}
+		@media (max-width: 960px){
+			width: 768px;
+		}
+		@media (max-width: 768px){
+			width: 100%;
+		}
+	}
+	
+	@import 'header';
+	@import 'footer';
+	
+	
+
+	
