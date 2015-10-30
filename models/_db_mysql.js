@@ -1,6 +1,6 @@
 
   var config  = require(__base+'config/config');
-  var mysql   = require('mysql');
+  var mysql   = require('mysql'); // "mysql" : "^2.9.0"
 
 
   var pool = mysql.createPool({
@@ -43,15 +43,12 @@
     */
     dbGet : function(q, next){
        pool.getConnection(function(err, conn){
-          if(err){ return next(err, false); }
+          if(err){ return next(err); }
           conn.query(q, function(err, rows){
-            if(err){ return next(err, false); }
+            if(err){ return next(err); }
             conn.release(); // ALWAYS release the connection when finished with it
-            if(rows.length > 0){
-              return next(false, rows);
-            } else {
-              return next(new Error('zero_rows_returned'), false);
-            }
+            rows = (rows.length > 0 ? rows : []);
+            return next(null, rows);
           });
        });
     },
