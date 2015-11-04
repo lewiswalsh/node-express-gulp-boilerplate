@@ -1,7 +1,7 @@
 {
-	"name"            : "node-express-gulp-boilerplate",
+	"name"            : "",
 	"version"         : "0.1.0",
-	"description"     : "Barebones for nodejs with Express, Handlebars, and Gulp",
+	"description"     : "",
 	"keywords"        : [],
 	"homepage"        : "",
 	"bugs"            : {
@@ -12,7 +12,7 @@
 	"license"         : "ISC",
 	"main"            : "app.js",
 	"scripts"         : {
-		"start" : "node app.js",
+		"start" : "node --use_strict app.js",
 		"test"  : "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository"      : {
